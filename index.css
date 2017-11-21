@@ -1,0 +1,203 @@
+body
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px auto auto auto auto;
+    grid-template-areas:
+        "l n n n r"
+        "l h h h r"
+        "l f f f r"
+        "l w w w r"
+        "l w w w r";
+}
+
+.head
+{
+    grid-area: h;
+    display: grid;
+    grid-template-columns: 4fr 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "news none adv";
+}
+.news
+{
+    grid-area: news;
+    display: grid;
+    grid-template-columns: 5fr 5fr 5fr 1rf 1fr;
+    grid-template-rows: 25px auto auto;
+    grid-template-areas:
+        "smi ekat time time time"
+        "new new new new new"
+        "usd eur oil none etc";
+}
+a[href="#world"]
+{
+    grid-area: smi;
+}
+a[href="#ekat"]
+{
+    grid-area: ekat;
+}
+.time
+{
+    grid-area: time;
+    margin-left: 10px;
+    line-height: 28px;
+    font-size: small;
+    opacity: .5;
+    text-align: center;
+}
+.new
+{
+    grid-area: new;
+}
+#ekat, #world
+{
+    position: fixed;
+}
+
+a
+{
+    margin-left: 10px;
+    line-height: 28px;
+    text-align: center;
+    background: #fff;
+    color: blue;
+    text-decoration: none;
+    font-size: larger;
+}
+.news > a
+{
+    opacity: .5;
+}
+
+#ekat,
+.new > ul,
+.news #ekat:target ~ .new > ul:nth-of-type(1)
+{
+    display: none;
+}
+
+.news #ekat:not(:target) ~ a:nth-of-type(1),
+.news #ekat:target ~ a:nth-of-type(2)
+{
+    opacity: 1;
+}
+a:hover
+{
+    color: red;
+    opacity: 1;
+}
+.new > ul:nth-of-type(1),
+.news #ekat:target ~ .new > ul:nth-of-type(2)
+{
+    display: block;
+}
+
+.usd
+{
+    grid-area: usd;
+}
+.eur
+{
+    grid-area: eur;
+}
+.oil
+{
+    grid-area: oil;
+}
+.usd,
+.eur,
+.oil,
+.etc
+{
+    display: flex;
+    justify-content: space-around;
+}
+.name
+{
+    font-family: Arial, serif;
+    font-weight: bold;
+}
+.change
+{
+    font-weight: lighter;
+    opacity: .5;
+}
+
+.etc
+{
+    grid-area: etc;
+}
+
+.advertising
+{
+    grid-area: adv;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "linkImage"
+        "sig";
+}
+a[href="yandex.ru"]
+{
+    grid-area: linkImage;
+}
+.advertising > p
+{
+    grid-area: sig;
+}
+
+.find
+{
+    grid-area: f;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr 1fr 2fr;
+    grid-template-areas:
+        "menu"
+        "find-field"
+        "example"
+        "advert";
+}
+.menu
+{
+    grid-area: menu;
+}
+.find-field
+{
+    grid-area: find-field;
+}
+.example
+{
+    grid-area: example;
+}
+.advert
+{
+    grid-area: advert;
+}
+.left-column
+{
+    grid-area: l;
+}
+
+.widgets
+{
+    grid-area: w;
+}
+
+.rigth-column
+{
+    grid-area: r;
+}
+
+
+
+
+
+
+
+
+
